@@ -1,0 +1,20 @@
+function suma(l: ListaInt): integer;
+{ Función que devuelve la suma de todos los elementos de la lista "l" }
+
+var 
+  p: ^Tcelda,  { Puntero para recorrer la lista }
+  cont: integer; { Variable para acumular la suma }
+
+begin
+  p := l; { Inicializamos el puntero con la lista "l" }
+  cont := 0; { Inicializamos la variable de conteo en 0 }
+
+  while p <> nil do 
+  { Mientras no lleguemos al final de la lista }
+  begin
+    cont := cont + p^.info; { Sumamos el valor del elemento actual a la variable de conteo }
+    p := p^.sig; { Avanzamos al siguiente elemento de la lista }
+  end;
+
+  suma := cont; { Devolvemos la suma total }
+end;

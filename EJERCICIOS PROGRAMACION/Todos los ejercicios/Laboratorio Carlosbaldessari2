@@ -1,0 +1,47 @@
+program tarea1;
+    procedure leerPalabraLargo( var largo : integer; var fin : boolean ) ;
+
+var caracter : char;
+begin
+    largo := 0 ;
+    fin:= false ;
+repeat 
+    read (caracter);
+    if (caracter = ' ') or (caracter ='.') then 
+    fin := True;                //Aca hace un control de repeticion para ver si no tiene separador o un finalizador como  ' ' o '.'
+        else 
+    largo:= largo + 1;
+
+    until (fin)
+    end;
+    procedure leerOracionDatos (var cantPalabras, masLarga, masCorta : integer);
+var 
+car : char;
+LPalabra : integer;
+fin := boolean;
+begin
+    maslarga := 0;
+mascorta := 0;
+cantPalabras:=0;
+repeat leerPalabraLargo(LPalabra , fin);
+if LPalabra >= 0 then
+    begin
+        cantPalabras := cantPalabras + 1;
+         if cantPalabras > maslarga then
+            maslarga := LPalabra
+        if LPalabra < mascorta then
+            mascorta := LPalabra
+            end;
+            until (fin);
+        end;
+    end;
+var 
+    cantPalabras, masLarga, mascorta : integer;
+begin
+    writeln ('Ingrese una oracion');
+    LeerOracionDatos(cantPalabras, masLarga,mascorta);
+    writeln('Cantidad de palabras: ', cantPalabras);
+    writeln('La palabra mas larga contiene: ', maslarga, ' caracteres');
+    writeln('La palabra mas corta contiene: ', mascorta, ' caracteres')
+end.
+

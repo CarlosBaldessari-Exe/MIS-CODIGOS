@@ -1,0 +1,10 @@
+program calculo;
+    var
+        x, n, resuldado : real;
+begin
+writeln  ('Ingrese un valor para x ');
+readln (x);
+writeln ('Ingrese un valor para n ');
+readln (n);
+
+end.

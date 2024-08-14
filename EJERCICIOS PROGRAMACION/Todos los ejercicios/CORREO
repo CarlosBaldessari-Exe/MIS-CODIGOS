@@ -1,0 +1,25 @@
+//Ejercicio 10 Practico 3;
+
+ // Por si un numero real tiene parte fraccionaria es tomar ese numero y restarle el trunc de ese numero 
+ // con el trunc vamos a tener la parte fraccionaria de ese numero, 
+//costo:=precio_kg + peso_ad * precio_ad
+
+program paquete;
+var 
+peso, resultado : real;
+ const
+adicional=56; 
+costo = 77;
+begin
+    write('Ingrese el peso de su paquete');
+    readln (peso);
+    if peso <= 1 then 
+    begin
+    write ('Su paquete sale', costo)
+        end
+        else  
+             resultado := costo + adicional *(trunc (peso));
+             writeln ('Su paquete sale $' , resultado:0:2, ' Pesa ' , peso:0:2) ;
+             readln ();
+     
+end.

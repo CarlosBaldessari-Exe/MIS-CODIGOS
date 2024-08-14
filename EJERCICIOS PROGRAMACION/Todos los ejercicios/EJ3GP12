@@ -1,0 +1,16 @@
+function ultimo(l: ListaInt): integer;
+// Función que devuelve el último elemento de una lista enlazada de enteros
+
+begin
+  if l = nil then
+    // Si la lista está vacía, devuelve -1
+    ultimo := -1;
+  else
+  begin
+    // Itera a través de la lista hasta llegar al final
+    while (l^.sig <> nil) and (l^.info < l^.sig.info) do 
+      l := l^.sig;
+    // Asigna el valor de la última posición a la variable ordenada
+    ordenada := l^.sig = nil;
+  end;
+end;

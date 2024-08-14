@@ -1,0 +1,5 @@
+program Numeros (Input, output)
+var 
+numero_int, numero_cuadrado, num_aleatorio : integer,
+begin
+readln (numero)

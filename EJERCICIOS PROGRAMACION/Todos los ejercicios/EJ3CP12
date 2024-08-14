@@ -1,0 +1,40 @@
+function producto(l: ListaInt): integer;
+{ Función que devuelve el producto de todos los elementos de la lista "l" }
+
+var     
+  prod: integer; { Variable para acumular el producto }
+
+begin
+  { Error: la variable "prod" no está inicializada }
+  { Debe inicializarse en 1, ya que el producto de números es 1 }
+
+  while (prod <> 0) and (l <> nil) do 
+  { Mientras el producto no sea 0 y la lista no esté vacía }
+  begin
+    prod := prod * l^.info; { Multiplicamos el producto actual por el valor del elemento }
+    l := l^.sig; { Avanzamos al siguiente elemento de la lista }
+  end;
+
+  producto := prod; { Devolvemos el producto total }
+end;
+
+//BLACK BOX SOLUTION
+
+function producto(l: ListaInt): integer;
+{ Función que devuelve el producto de todos los elementos de la lista "l" }
+
+var     
+  prod: integer; { Variable para acumular el producto }
+
+begin
+  prod := 1; { Inicializamos el producto en 1 }
+
+  while l <> nil do 
+  { Mientras la lista no esté vacía }
+  begin
+    prod := prod * l^.info; { Multiplicamos el producto actual por el valor del elemento }
+    l := l^.sig; { Avanzamos al siguiente elemento de la lista }
+  end;
+
+  producto := prod; { Devolvemos el producto total }
+end;

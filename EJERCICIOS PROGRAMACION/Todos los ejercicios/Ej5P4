@@ -1,0 +1,18 @@
+program numero_nat;
+    
+    var
+        n, k :Integer;
+        begin
+            writeln ('Ingrese un numero natural ');
+            readln(n);
+            writeln ('Los divisores de ', n , 'son ');
+            for k := 1 to n do 
+            begin
+            if n mod k = 0 then 
+            writeln (k);
+
+        end;
+
+        readln ();
+        
+        end. 

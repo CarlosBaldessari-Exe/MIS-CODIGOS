@@ -1,0 +1,17 @@
+program Alcance;
+var v : integer;
+function fun (v : integer): integer;
+begin
+v := v + 3;
+fun := v
+end;
+procedure pro (var x : integer);
+begin
+x := v + 2
+end;
+begin
+readln(v);
+pro(v);
+write(v);
+write(fun(v), v)
+end.

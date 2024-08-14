@@ -1,0 +1,12 @@
+program Octal ;
+var numero, c,d, u, r: integer;
+begin
+    readln (numero);
+    c:=numero div 100;
+    u:= numero mod 10;
+    d:=(numero mod 100)div 20;
+    r:= c*sqr(8) + d *8 + u;
+writeln ('El valor es', r);
+end.
+//Este programa resuelve un valor en base 8
+

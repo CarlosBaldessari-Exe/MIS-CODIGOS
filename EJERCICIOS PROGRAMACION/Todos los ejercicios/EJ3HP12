@@ -1,0 +1,177 @@
+
+
+--------------------SOLUCION DEL P12-------------------
+{Si la lista es vacia retorna TRUE}
+
+function ordenada(l: ListaInt): boolean;
+// Función que determina si la lista está ordenada de menor a mayor
+
+begin
+  if l = NIL then
+    // Si la lista está vacía, se considera ordenada
+    ordenada := TRUE;
+  else
+  begin
+    // Itera a través de la lista mientras el elemento actual es menor que el siguiente
+    while (l^.sig <> NIL) and (l^.info < l^.sig^.info) do
+      l := l^.sig;
+    // Verifica si la lista ha llegado al final (l^.sig = NIL)
+    ordenada := l^.sig = NIL;
+  end;
+end;
+Este código es una solución más concisa y eficiente que el mío anterior. La función ordenada devuelve TRUE si la lista está vacía o si está ordenada de menor a mayor.
+
+La parte interesante del código es el bucle while, que itera a través de la lista mientras el elemento actual es menor que el siguiente. Si la lista está ordenada, el bucle llegará al final de la lista y l^.sig será NIL. En ese caso, la función devuelve TRUE.
+
+Si la lista no está ordenada, el bucle se detendrá en el primer elemento que no cumple la condición de ser menor que el siguiente, y l^.sig no será NIL. En ese caso, la función devuelve FALSE.
+
+En general, este código es más eficiente y fácil de entender que mi solución anterior. ¡Bien hecho!
+
+==============BLACKBOX SOLUTION ====================
+function ordenada(l: ListaInt): boolean;
+// Función que determina si la lista está ordenada de menor a mayor
+
+begin
+  if l = nil then
+    // Si la lista está vacía, se considera ordenada
+    ordenada := true;
+  else
+  begin
+    while l^.sig <> nil do
+    begin
+      // Verifica si el elemento actual es menor que el siguiente
+      if l^.info > l^.sig.info then
+      begin
+        // Si no es menor, la lista no está ordenada
+        ordenada := false;
+        exit;
+      end;
+      l := l^.sig;
+    end;
+    // Si no se encontró ningún elemento desordenado, la lista está ordenada
+    ordenada := true;
+  end;
+end;
+
+
+--------
+
+MAL PERO NO TAAAAAN MAL
+function ordenada(l: ListaInt): boolean;
+// Función que determina si la lista está ordenada de menor a mayor
+
+begin
+  var 
+    ord: integer; // Variable para almacenar el valor actual de la lista
+  begin
+    ord := l^.dato; // Inicializa la variable ord con el primer elemento de la lista
+    while (l^.sig <> nil) do // Itera a través de la lista hasta que llegue al final
+    begin
+      if (l^.sig^.dato < ord) then // Verifica si el elemento siguiente es menor que el actual
+      begin
+        ordenada := false; // Si es menor, la lista no está ordenada
+        exit; // Sale del bucle y devuelve false
+      end;
+      ord := l^.sig^.dato; // Actualiza la variable ord con el elemento siguiente
+      l := l^.sig; // Avanza al siguiente elemento en la lista
+    end;
+    ordenada := true; // Si no se encontró ningún elemento desordenado, la lista está ordenada
+  end;
+end;
+
+
+============corregido por IA 
+function ordenada(l: ListaInt): boolean;
+begin
+  ordenada := true; // Inicializa la función en true
+  if l = nil then
+    exit; // Si la lista está vacía, devuelve true
+  var 
+    ord: integer;
+  begin
+    ord := l^.dato;
+    while (l^.sig <> nil) do
+    begin
+      if (l^.sig^.dato < ord) then
+      begin
+        ordenada := false;
+        exit;
+      end;
+      ord := l^.sig^.dato; 
+      l := l^.sig;
+    end;
+  end;
+end;
+// La función ordenada devuelve true si la lista está ordenada de menor a mayor, y false
+// en caso contrario.
+// La función itera a través de la lista, comparando cada elemento con el siguiente.
+// Si encuentra un elemento que es menor que el anterior, devuelve false.
+// Si no encuentra ninguno, devuelve true.
+// La función también devuelve true si la lista está vacía, ya que se considera ordenada
+// por defecto.
+// La función utiliza una variable auxiliar "ord" para almacenar el valor actual de la lista
+// y compararlo con el siguiente elemento.
+// La función utiliza un bucle while para iterar a través de la lista hasta que llegue
+// al final.
+// La función utiliza una variable booleana "ordenada" para almacenar el resultado de la función
+// y devolverlo al final.
+// La función utiliza un exit para salir del bucle y devolver el resultado en cuanto
+// encuentra un elemento desordenado.
+// La función utiliza un begin y un end para definir el bloque de código que se ejecut
+//ará si la lista no está vacía.
+// La función utiliza un if para verificar si la lista está vacía y salir del bucle si
+// es así.
+// La función utiliza un while para iterar a través de la lista.
+// La función utiliza un if para verificar si el elemento actual es menor que el anterior
+// y cambiar el valor de "ordenada" a false si es así.
+// La función utiliza un exit para salir del bucle y devolver el resultado en cuanto
+// encuentra un elemento desordenado.
+// La función utiliza un begin y un end para definir el bloque de código que se ejecut
+//ará si la lista no está vacía.
+// La función utiliza un if para verificar si la lista está vacía y salir del bucle si
+// es así.
+// La función utiliza un while para iterar a través de la lista.
+// La función utiliza un if para verificar si el elemento actual es menor que el anterior
+// y cambiar el valor de "ordenada" a false si es así.
+// La función utiliza un exit para salir del bucle y devolver el resultado en cuanto
+// encuentra un elemento desordenado.
+// La función utiliza un begin y un end para definir el bloque de código que se ejecutará 
+//si la lista no está vacía.
+// La función utiliza un if para verificar si la lista está vacía y salir del bucle si
+// es así.
+===========BLACK BOX SOLUCION CORREGIDA DE MI CODIGO==========
+function ordenada(l: ListaInt): boolean;
+// Función que determina si la lista está ordenada de menor a mayor
+
+begin
+  if l = nil then
+    // Si la lista está vacía, se considera ordenada
+    ordenada := true;
+  else
+  begin
+    // Inicializa la función en true, asumiendo que la lista está ordenada
+    ordenada := true;
+    var
+      ord: integer; // Variable para almacenar el valor actual de la lista
+    ord := l^.dato; // Inicializa la variable ord con el primer elemento de la lista
+    while l^.sig <> nil do
+    begin
+      // Verifica si el elemento siguiente es menor o igual que el actual
+      if l^.sig^.dato <= ord then
+      begin
+        // Si es menor o igual, la lista no está ordenada
+        ordenada := false;
+        exit; // Sale del bucle y devuelve false
+      end;
+      ord := l^.sig^.dato; // Actualiza la variable ord con el elemento siguiente
+      l := l^.sig; // Avanza al siguiente elemento en la lista
+    end;
+  end;
+end;
+
+
+Este código es correcto y funciona bien. Verifica si la lista está vacía y devuelve true en ese caso. Luego, itera a través de la lista y verifica si cada elemento es menor o igual que el anterior. Si encuentra un elemento que no cumple esta condición, devuelve false. Si itera toda la lista sin encontrar elementos desordenados, devuelve true.
+
+La única cosa que podrías mejorar es la eficiencia del código. En este caso, la función ordenada devuelve true si la lista está vacía, lo que es correcto. Sin embargo, podrías considerar devolver false si la lista tiene solo un elemento, ya que no hay suficientes elementos para determinar si la lista está ordenada.
+
+En general, el código es claro y fácil de entender. ¡Bien hecho!

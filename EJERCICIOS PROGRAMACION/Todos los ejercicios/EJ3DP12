@@ -1,0 +1,14 @@
+function cuantosPares(l: ListaInt): integer;
+var 
+  pares: integer; // Inicializa una variable para contar pares
+
+begin
+  pares := 0; // Inicializa el conteo en 0 (faltaba en el código original)
+  while l <> nil do 
+  begin
+    if (l^.dato mod 2 = 0) then // Verifica si el valor actual es par
+      pares := pares + 1; // Si es par, incrementa el conteo
+    l := l^.sig; // Avanza al siguiente elemento en la lista
+  end;
+  cuantosPares := pares; // Devuelve el conteo de pares
+end;

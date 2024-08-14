@@ -1,0 +1,31 @@
+function posicion(valor: integer; l: ListaInt): integer;
+var 
+  pos: integer; // Variable para almacenar la posición del valor en la lista
+
+begin
+  pos := 1; // Inicializa la posición en 1 (asumiendo que la lista está indexada desde 1)
+  while (l <> nil) and (l^.info <> valor) do 
+  begin
+    pos := pos + 1; // Incrementa la posición mientras no se encuentra el valor
+    l := l^.sig; // Avanza al siguiente elemento en la lista
+  end;
+  if l = nil then
+    pos := -1; // Si no se encontró el valor, devuelve -1 para indicar que no existe
+  else 
+    posicion := pos; // Si se encontró el valor, devuelve la posición
+end;
+
+
+Esta función busca un valor específico valor en una lista enlazada l y devuelve la posición del valor en la lista si existe, o -1 si no existe.
+
+Aquí hay un resumen de lo que hace la función:
+
+Inicializa la posición en 1.
+Itera a través de la lista mientras no se encuentra el valor y la lista no esté vacía.
+En cada iteración, incrementa la posición y avanza al siguiente elemento en la lista.
+Si no se encontró el valor al final de la iteración, devuelve -1 para indicar que no existe.
+Si se encontró el valor, devuelve la posición actual.
+Nota: La función asume que la lista está indexada desde 1, es decir, la primera posición es 1, la segunda es 2, y así sucesivamente.
+
+
+

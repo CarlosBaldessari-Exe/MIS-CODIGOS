@@ -1,0 +1,24 @@
+program Num_Naturales;
+
+var 
+        n, i, numeros_ent,nmayor, nmenor : Integer;
+        begin
+                writeln ('Ingrese un valor para n ');
+                readln (n);
+                nmenor := maxint;
+                nmayor := 0;
+
+                writeln ('Ingrese', n ,' enteros ');
+            for i := 1 to n do 
+        begin
+                readln  (numeros_ent);
+                if numeros_ent > nmayor then 
+                nmayor:= numeros_ent;
+                if numeros_ent < nmenor then 
+                nmenor:= numeros_ent
+
+        end;
+    writeln('El mayor entero ingresado es: ', nmayor);
+    writeln('El menor entero ingresado es: ',  nmenor);
+    readln();
+end.

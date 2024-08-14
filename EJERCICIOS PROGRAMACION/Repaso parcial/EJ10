@@ -1,0 +1,15 @@
+program forwhile;
+const n = 3;
+var i, j : Integer;
+begin
+for i:=1 to n do
+begin
+j := i;
+while j < n do
+begin
+write('*');
+j := j+1
+end;
+write('$')
+end
+end.

@@ -1,0 +1,17 @@
+procedure cargarCadena(var cadena: Cadena);
+var
+  i: Integer;
+  caracter: Char;
+begin
+  i := 1;
+  while (i <= MAX) and (caracter <> '.') do
+  begin
+    read(caracter);
+    if caracter <> '.' then
+    begin
+      cadena.letras[i] := caracter;
+      i := i + 1;
+    end;
+  end;
+  cadena.largo := i - 1;
+end;

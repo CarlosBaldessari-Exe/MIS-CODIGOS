@@ -1,0 +1,34 @@
+Procedure elemEnPos (pos: integer; lst: ListaInt; var resultado: posibleElem);
+{ Procedimiento que devuelve el elemento en la posición "pos" de la lista "lst" }
+
+var i: integer
+{ Variable para contar la posición actual en la lista }
+
+begin
+  i := 1;
+  { Inicializamos el contador en 1, que es la primera posición de la lista }
+
+  while (lst <> nil) and (i < pos) do
+  { Mientras la lista no esté vacía y no hayamos llegado a la posición "pos" }
+  begin
+    lst := lst^.sig;
+    { Avanzamos al siguiente elemento de la lista }
+    i := i + 1;
+    { Incrementamos el contador }
+  end;
+
+  if (lst <> nil) then 
+  { Si hemos llegado a la posición "pos" y el elemento existe }
+  begin
+    resultado := true;
+    { Indicamos que el elemento existe }
+    resultado.elem := lst.info
+    { Asignamos el valor del elemento a la variable "resultado.elem" }
+  end
+  else
+  { Si no hemos llegado a la posición "pos" o la lista está vacía }
+  begin
+    resultado := false;
+    { Indicamos que el elemento no existe }
+  end;
+end;

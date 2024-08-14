@@ -1,0 +1,40 @@
+procedure InsertarOrdenado(nuevo : integer; var l : ListaInt);
+var 
+    aux, celda: ListaInt;
+    new(celda); 
+    celda^.info := nuevo;
+    celda^.sig := nil;
+    begin 
+    if (l = nil) or (l^.info > nuevo) then 
+    begin
+    celda^.sig:= l;
+    l := celda;
+    end
+    else
+    begin
+    
+
+{ SOLUCION P12;
+
+    {PRE: l esta ordenada
+procedure InsertarOrdenado(nuevo : integer; var l : ListaInt);
+var
+celda, iterL : ListaInt;
+begin
+new(celda);
+celda^.info := nuevo;
+if (l = NIL) or (nuevo <= l^.info) then
+begin
+celda^.sig := l;
+l := celda
+end
+else
+begin
+iterL := l;
+while (iterL^.sig <> NIL) and (iterL^.sig^.info < nuevo) do
+iterL := iterL^.sig;
+celda^.sig := iterL^.sig;
+iterL^.sig := celda
+end
+end;
+}

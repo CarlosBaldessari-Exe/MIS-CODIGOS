@@ -1,0 +1,52 @@
+program Laboratorio;
+procedure leerpalabralargo (var largo:integer;  var final:boolean)    ;
+    var caracter: char;
+begin
+    largo := 0;
+    final:= false;
+repeat
+    read(caracter);
+    if (caracter = ' ') or (caracter = '.') then
+    fin := True
+    else 
+    largo := largo + 1;
+
+until (fin);
+end;
+    procedure LeerOracionDatos(var cantPalabras, maslarga, mascorta :integer);
+var 
+    caracter: char;
+    largopalabra: integer;
+    fin: boolean
+begin
+    cantPalabras := 0;
+    maslarga := 0;
+    mascorta := maxint;
+    repeat
+    leerpalabralargo(largopalabra , fin);
+    if largopalabra > 0 then
+
+begin
+    cantPalabras := cantPalabras + 1;   
+    if largopalabra > maslarga then
+        masLarga := largopalabra
+
+    if largopalabra < mascorta then 
+        mascorta := largopalabra;
+
+end;
+    until fin;
+
+end;
+
+var
+    cantPalabras, masLarga, mascorta : integer;
+begin
+    writeln ('Ingrese una oracion');
+    LeerOracionDatos(cantPalabras, masLarga,mascorta);
+    writeln('Cantidad de palabras: ', cantPalabras);
+    writeln('La palabra mas larga contiene: ', maslarga, ' caracteres');
+    writeln('La palabra mas corta contiene: ', mascorta, ' caracteres')
+end.
+
+

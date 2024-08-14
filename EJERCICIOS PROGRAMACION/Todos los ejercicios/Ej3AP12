@@ -1,0 +1,42 @@
+function suma(l: ListaInt): integer;
+{ Función que devuelve la suma de todos los elementos de la lista "l" }
+
+begin
+  suma := 0; { Inicializamos la suma en 0 }
+
+  while l <> nil do 
+  { Mientras la lista no esté vacía }
+  begin
+    suma := suma + l^.dato; { Sumamos el valor del elemento actual a la suma }
+    l := l^.sig; { Avanzamos al siguiente elemento de la lista }
+  end;
+
+  { Error: la instrucción "suma:= sumal" no tiene sentido }
+  { La función ya ha calculado la suma en la variable "suma", no es necesario asignarla de nuevo }
+  { Además, "sumal" no está definido en ningún lugar, es un error de sintaxis }
+
+  { La función debería devolver la suma calculada, pero la instrucción "suma:= sumal" la hace fallar }
+end;
+
+
+{ Error: la función no devuelve el resultado }
+
+//BLACK BOX SOLUTION
+
+
+function suma(l: ListaInt): integer;
+{ Función que devuelve la suma de todos los elementos de la lista "l" }
+
+begin
+  suma := 0; { Inicializamos la suma en 0 }
+
+  while l <> nil do 
+  { Mientras la lista no esté vacía }
+  begin
+    suma := suma + l^.dato; { Sumamos el valor del elemento actual a la suma }
+    l := l^.sig; { Avanzamos al siguiente elemento de la lista }
+  end;
+
+  { La función devuelve la suma calculada }
+  resultado := suma;
+end;

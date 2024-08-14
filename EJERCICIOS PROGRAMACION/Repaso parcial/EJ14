@@ -1,0 +1,7 @@
+program Ej14
+var n,cantcar :integer, caracteres : char;
+begin
+    write('Ingrese un valor para n');
+    readln(n);
+
+end;

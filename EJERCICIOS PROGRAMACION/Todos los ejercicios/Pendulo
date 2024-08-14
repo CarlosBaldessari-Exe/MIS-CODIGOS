@@ -1,0 +1,14 @@
+program pendulo (input , output);
+const
+pi=3.14;
+g=9.8; //Gravedad
+var
+t,l:real;
+begin
+    write ('Ingrese longitud del pendulo ');
+    readln (l);
+    t:=2 * pi * sqrt(l/g);  //Calculo del tiempo del pendulo
+write ('El periodo del pendulo es' , t);
+
+    
+end. 

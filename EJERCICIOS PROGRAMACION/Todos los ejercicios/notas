@@ -1,0 +1,84 @@
+program Ej7P6
+ begin
+    Var 
+    m,n, i, j: integer;
+
+    write ('Ingrese M');
+    readln (m);
+    write('Ingrese N');
+    readln (n);
+     for j = 1 to m do
+     begin
+        if j <= n then 
+        writeln ('La Tabla de ', )        
+     end;
+
+    
+
+ end;
+
+
+
+ program TablasDeMultiplicar;
+
+var
+  m, n, i, j: Integer;
+
+begin
+  Write('Ingrese m: ');
+  ReadLn(m);
+  
+  Write('Ingrese n: ');
+  ReadLn(n);
+  
+  if m >= n then      
+  begin
+    i := n; // Comenzamos desde n
+    while i <= m do
+    begin
+      WriteLn('Tabla del ', i);
+      j := 1;
+      while j <= 10 do
+      begin
+        WriteLn(i, ' * ', j, ' = ', i * j);
+        j := j + 1;
+      end;
+      WriteLn; // Línea en blanco para separar las tablas
+      i := i + 1;
+    end;
+  end
+  else
+  begin
+    WriteLn('Error: m debe ser mayor o igual que n.');
+  end;
+
+
+end.
+
+
+
+Claro, aquí tienes una explicación paso a paso del programa:
+
+
+Declaración de variables: Se declaran las variables m, n, i y j de tipo entero.
+
+Solicitud de entrada al usuario: Se muestra un mensaje pidiendo al usuario que ingrese el valor de m utilizando Write y ReadLn, y luego se hace lo mismo para n.
+
+Verificación de m y n: Se verifica si m es mayor o igual que n. Si es verdadero, el programa procede a generar las tablas de multiplicar. De lo contrario, muestra un mensaje de error y finaliza.
+
+Bucle externo while: Se utiliza un bucle while para iterar desde n hasta m.
+
+Bucle interno while: Dentro del bucle externo, otro bucle while se utiliza para generar la tabla de multiplicar para el número actual (i). Este bucle itera desde 1 hasta 10, multiplicando i por cada número en este rango y mostrando el resultado.
+
+Impresión de la tabla de multiplicar: Se utiliza WriteLn para mostrar cada línea de la tabla de multiplicar, que consiste en la multiplicación de i por j y su resultado.
+
+Incremento de i y j: Se incrementa i en 1 para pasar al siguiente número en el rango y j en 1 para seguir multiplicando hasta llegar a 10.
+
+Salto de línea para separar las tablas de multiplicar: Después de imprimir la tabla de multiplicar para un número, se añade una línea en blanco para separarla de la siguiente tabla.
+
+Fin del programa: Una vez que se han generado todas las tablas de multiplicar requeridas, el programa finaliza. Si m no es mayor o igual que n, se muestra un mensaje de error.
+
+
+
+
+

@@ -1,0 +1,57 @@
+Program Ej12P10
+
+const
+    CANT_LETRAS = ...; { valor entero mayor a 0 }
+    CANT_ARTICULOS = ...; { valor entero mayor a 0 }
+type
+    TIdioma = (es, en, pt);
+    TFecha = record
+    pág. 3 de 5dia : 1..31;
+    mes : 1..12;    
+    anio : 2001..9999 (* La wikipedia comienza en 2001 *)
+end;
+    TNombre = array [1..CANT_LETRAS] of char;
+    TArticulo = record
+    nombre : TNombre;
+    idioma : TIdioma;
+    visitas : Integer;
+    ultima_act : TFecha;
+end;
+Wikipedia = array [1..CANT_ARTICULOS] OF TArticulo;
+//Forma profesor
+function esPosterior (f1,f2:TFecha) boolean;
+begin
+    esPosterior := (f1.anio > f2.anio) or (f2.anio = f2.anio)
+    and (f1.mes > f2.mes) or (f1.anio = f2.anio) and (f1.mes=f2.mes) and (f1.dia > f2.fia)
+end;
+
+ procedure articuloMasReciente(wiki:Wikipedia, idioma:TIdioma; var art:TArticulo);
+ var i, j: Integer;
+ begin
+j:=1;
+
+ while wiki[j].idioma<>idioma do
+ j:=j+1;
+ art:= wiki[j];
+ for i:=j+1 to CANT_ARTICULOS do
+//    for i:=1 to CANT_ARTICULOS do
+    if wiki[i].idioma=idioma and esPosterior (art.ultima_act , wiki[i].ultima_act) then
+    art := wiki[i];
+    end;
+ end;
+{function esPosterior(f1, f2:TFecha):boolean;
+begin
+    if f1.anio = f2.anio then 
+    if f1.mes > f2.mes then 
+
+
+end;
+function esPosterior (f1, f2: TFecha) : boolean;
+begin
+  if (f1.anio > f2.anio) or
+     ((f1.anio = f2.anio) and (f1.mes > f2.mes)) or
+     ((f1.anio = f2.anio) and (f1.mes = f2.mes) and (f1.dia > f2.dia)) then
+    esPosterior := true
+  else
+    esPosterior := false;
+end;}

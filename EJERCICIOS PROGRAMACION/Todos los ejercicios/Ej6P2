@@ -1,0 +1,42 @@
+program Ej6P2;
+var 
+dia, fecha1, fecha2 ,hora, minuto, suma : integer;
+begin
+    write('Introduzca el primero tiempo');
+
+readln(fecha1);
+write ('Introduzca el segundo tiempo');
+readln (fecha2);
+suma:= fecha1+fecha2;
+ dia := suma div 2400 ; //Det los dias sumando los minutos totales 
+ suma:= suma mod 2400 ; //Quitar los dias de la suma 
+ hora:=suma div 100;
+ minuto := suma mod 100;
+ writeln ('La suma de los tiempos es: ', dia,' ', hora:2,minuto:2);
+end.
+
+
+
+//program SumaDeTiempos;
+
+//var
+  //tiempo1, tiempo2, suma, dias, horas, minutos: integer;
+
+//begin
+  //writeln('Ingrese el primer tiempo (hhmm): ');
+  //readln(tiempo1);
+  
+//writeln('Ingrese el segundo tiempo (hhmm): ');
+ // readln(tiempo2);
+  
+  //suma := tiempo1 + tiempo2;
+  
+  //dias := suma div 2400; // Determinar los días sumando los minutos totales y dividiéndolos por 2400
+  //suma := suma mod 2400; // Quitar los días de la suma
+  
+ // horas := suma div 100;
+ // minutos := suma mod 100;
+  
+  //writeln('La suma de los tiempos es: ', dias, ' ', horas:2, minutos:2);
+  //readln; // Agregamos esta línea para evitar que el programa se cierre inmediatamente
+//end.
